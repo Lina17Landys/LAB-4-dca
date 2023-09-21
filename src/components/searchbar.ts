@@ -11,12 +11,11 @@ class SearchBar extends HTMLElement {
   render() {
     this.shadowRoot!.innerHTML = `
     <link rel="stylesheet" href="../main.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
     <div class="searchBar">
         <div class="box">
-            <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="material-symbols-outlined">search</span>
             <input id="searchBar" onkeyup="searchItem()" type="text" name="search" placeholder="Search..">
           </div>
 `;
