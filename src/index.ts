@@ -25,6 +25,8 @@ class App extends HTMLElement {
       render() {
         this.shadowRoot!.innerHTML =  `
         <searchbar-container></searchbar-container>
+
+        <recipe-container></recipe-container>
         `
       }
 }
