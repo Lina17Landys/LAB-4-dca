@@ -1,3 +1,4 @@
+import { recipies } from "../index";
 class RecipeCards extends HTMLElement {
     constructor() {
         super();
