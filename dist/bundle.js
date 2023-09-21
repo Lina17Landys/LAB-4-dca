@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("hola"),fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert").then((o=>o.json())).then((o=>{console.log(o)})).catch((o=>console.log(o)))})();
