@@ -47,4 +47,3 @@ class RecipeCards extends HTMLElement {
 
 customElements.define("recipe-container", RecipeCards);
 export default RecipeCards;
-
