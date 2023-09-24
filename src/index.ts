@@ -24,9 +24,11 @@ class App extends HTMLElement {
 
       render() {
         this.shadowRoot!.innerHTML =  `
+        <link rel="stylesheet" href="../main.css">
+
         <searchbar-container></searchbar-container>
 
-        <recipe-container></recipe-container>
+        <recipe-container" ></recipe-container>
         `
       }
 }

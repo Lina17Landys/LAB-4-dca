@@ -18,15 +18,18 @@ class RecipeCards extends HTMLElement {
 
             meals.forEach((meal: { strMeal: string, strMealThumb: string }) => {
                 const recipeItem = document.createElement("li");
+                const recipeContainer = document.createElement("div");
+
                 const recipeImage = document.createElement("img");
                 recipeImage.src = meal.strMealThumb; 
-                recipeImage.alt = meal.strMeal; 
-                recipeItem.appendChild(recipeImage);
+                recipeImage.alt = meal.strMeal;
+                recipeContainer.appendChild(recipeImage);
                 
                 const recipeName = document.createElement("p");
                 recipeName.textContent = meal.strMeal; 
-                recipeItem.appendChild(recipeName);
+                recipeContainer.appendChild(recipeName);
 
+                recipeItem.appendChild(recipeContainer);
                 recipeList.appendChild(recipeItem);
             });
 
