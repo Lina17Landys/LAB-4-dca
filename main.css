@@ -1,4 +1,5 @@
 * {
+    font-family: 'Sora', sans-serif;
     background-color: #fce9da;
     overflow-x: hidden;
 }
@@ -52,13 +53,18 @@
 ul {
     list-style-type: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    
+    grid-gap: 20px;
 }
 
 li {
-    margin: 10px 0;
+    margin: 0;
+    text-align: center;
 }
 
+
 img {
-    max-width: 60%;
+    max-width: 50%;
     height: auto;
 }

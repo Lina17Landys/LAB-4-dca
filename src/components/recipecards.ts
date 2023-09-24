@@ -19,12 +19,12 @@ class RecipeCards extends HTMLElement {
             meals.forEach((meal: { strMeal: string, strMealThumb: string }) => {
                 const recipeItem = document.createElement("li");
                 const recipeImage = document.createElement("img");
-                recipeImage.src = meal.strMealThumb; // URL de la imagen
-                recipeImage.alt = meal.strMeal; // Texto alternativo para la imagen
+                recipeImage.src = meal.strMealThumb; 
+                recipeImage.alt = meal.strMeal; 
                 recipeItem.appendChild(recipeImage);
                 
                 const recipeName = document.createElement("p");
-                recipeName.textContent = meal.strMeal; // Nombre de la receta
+                recipeName.textContent = meal.strMeal; 
                 recipeItem.appendChild(recipeName);
 
                 recipeList.appendChild(recipeItem);
@@ -33,11 +33,11 @@ class RecipeCards extends HTMLElement {
             this.shadowRoot!.innerHTML = `
             <link rel="stylesheet" href="../main.css">
 
-                <h2>Desserts recipes</h2>
+              <center>  <h2>Desserts recipes</h2> </center>
             `;
             this.shadowRoot!.appendChild(recipeList);
         } catch (error) {
-            console.error("Error al obtener datos de la API:", error);
+            console.error("Error");
         }
     }
 }
