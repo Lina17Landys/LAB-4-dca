@@ -11,23 +11,22 @@ recipies
 })
 .catch((error) => console.log(error));
 
-
 class App extends HTMLElement {
-    constructor() {
-        super()
-        this.attachShadow({mode: "open"});
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        this.render();
-      }
+  connectedCallback() {
+    this.render();
+  }
 
-      render() {
-        this.shadowRoot!.innerHTML =  `
-
-        <searchbar-container></searchbar-container>
-        <recipe-container></recipe-container>
-        `
-      }
+  render() {
+    this.shadowRoot!.innerHTML = `
+      <searchbar-container></searchbar-container>
+      <recipe-container></recipe-container>
+    `;
+  }
 }
+
 customElements.define("app-container", App);
