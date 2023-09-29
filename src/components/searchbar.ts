@@ -1,13 +1,22 @@
-import RecipeCards from "./recipecards";
-class SearchBar extends HTMLElement {
+export class SearchBar extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.handleEnterKey = this.handleEnterKey.bind(this);
   }
 
   connectedCallback() {
     this.render();
-    this.setupSearch();
+    const searchBarInput = this.shadowRoot!.getElementById("searchBar") as HTMLInputElement;
+    searchBarInput.addEventListener("keydown", this.handleEnterKey);
+  }
+
+  handleEnterKey(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      const searchText = (event.target as HTMLInputElement).value.toLowerCase();
+      const searchEvent = new CustomEvent("search", { detail: searchText });
+      this.dispatchEvent(searchEvent);
+    }
   }
 
   render() {
@@ -18,21 +27,12 @@ class SearchBar extends HTMLElement {
       <div class="searchBar">
         <div class="box">
           <span class="material-symbols-outlined">search</span>
-          <input id="searchBar" type="text" name="search" placeholder="Search..">
+          <input id="searchBar" type="text" name="search" placeholder="Search...">
         </div>
       </div>
     `;
   }
-
-  setupSearch() {
-    const searchBar = this.shadowRoot!.getElementById("searchBar") as HTMLInputElement;
-    searchBar.addEventListener("input", () => {
-      const searchText = searchBar.value.toLowerCase();
-      const recipeCards = document.querySelector("recipe-container") as RecipeCards;
-      recipeCards.searchItem(searchText);
-    });
-  }
 }
 
 customElements.define("searchbar-container", SearchBar);
-export default SearchBar;
+
