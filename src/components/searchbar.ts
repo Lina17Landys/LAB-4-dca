@@ -36,3 +36,4 @@ export class SearchBar extends HTMLElement {
 
 customElements.define("searchbar-container", SearchBar);
 
+
